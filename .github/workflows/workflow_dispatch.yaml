@@ -1,6 +1,6 @@
 name: workflow-dispatch
 on:
-  workflow-dispatch:
+  workflow_dispatch:
     # input 작업
     inputs:
       name:
