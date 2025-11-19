@@ -1,4 +1,4 @@
-name: push-workflow 1 # 액션창에서 표현될 시각화 이름
+name: push-workflow 2 # 액션창에서 표현될 시각화 이름
 on: push # 어떤 이벤트로 GitHub Actions 시킬 지 지정하는 타입
 
 jobs: # 실행시킬 jobs의 집합 (필수)
