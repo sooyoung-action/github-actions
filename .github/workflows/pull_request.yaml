@@ -1,5 +1,7 @@
 name: pull-request-workflow
-on: pull_request
+on:
+  pull_request:
+    types: (opened) # pull_request의 Activity Type 명시적 지정
 
 jobs: # 실행시킬 jobs의 집합 (필수)
   pull-request-job: # job의 이름
