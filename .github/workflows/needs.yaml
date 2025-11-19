@@ -1,0 +1,31 @@
+name: needs
+on: push
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: echo "job1 done"
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: [job1] # job1이 성공한 이후, 해당 job이 실행되도록 needs 키워드 사용
+    steps:
+      - name: echo
+        run: echo "job2 done"
+
+  job3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: | # exit1 : Github job이 강제 실패
+          echo "job3 failed"
+          exit1
+
+  job4:
+    runs-on: ubuntu-latest
+    needs: [job3]
+    steps:
+      - name: echo
+        run: echo "job4 done"
