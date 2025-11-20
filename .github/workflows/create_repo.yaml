@@ -26,5 +26,30 @@ jobs:
           echo ${{ secrets.PERSONAL_ACCESS_TOKEN }} | gh auth login --with-token
 
       - name: create-repo # input 값으로 Repository 생성
+        id: create-repo # Slack 알람에 사용하기 위한 id 지정
         run: |
           gh repo create sooyoung-action/${{ inputs.prefix }}-${{ inputs.name }} --public --add-readme
+
+      - name: slack # 슬랙 성공, 실패 알림
+        if: always()
+        uses: slackapi/slack-github-action@v2.1.1
+        with:
+          payload: |
+            {
+              "attachments": [
+                {
+                  "pretext" : "create repor result",
+                  "color": "28a745",
+                  "fields": [
+                    {
+                      "title": create repo result ${{ steps.create-repo.outcome }}", 
+                      "short": true,
+                      "value": ${{ inputs.prefix }}-${{ inputs.name }} 
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMMING_WEBHOOK
