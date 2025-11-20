@@ -42,7 +42,7 @@ jobs:
                   "color": "28a745",
                   "fields": [
                     {
-                      "title": create repo result ${{ steps.create-repo.outcome }}", 
+                      "title": "create repo result ${{ steps.create-repo.outcome }}", 
                       "short": true,
                       "value": ${{ inputs.prefix }}-${{ inputs.name }} 
                     }
