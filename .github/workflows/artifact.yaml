@@ -8,7 +8,7 @@ jobs:
       - name: echo
         run: echo hello-world > hello.txt
       - name: upload artifact
-        uses: artifact/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: artifact-test # artifact 이름
           paths: ./hello.txt # 해당 파일을 Root Path에 upload
@@ -18,7 +18,7 @@ jobs:
     needs: [upload-artifact] # 업로드 이후 가능하므로, 종속성 부여
     steps:
       - name: download-artifact
-        uses: artifact/download-artifact@v3
+        uses: actions/download-artifact@v3
         with:
           name: artifact-test
           path: ./
