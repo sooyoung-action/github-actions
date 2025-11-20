@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: loop
         run: | # 1초에 카운트가 1씩 올라가는 무한 루프 Step 스크립트
-          count = 0
+          count=0
           while true; do
             echo "seconds: $count"
             count=$((count+1))
