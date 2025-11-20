@@ -4,8 +4,9 @@ on: push
 jobs:
   get-matrix:
     strategy:
-      os: [windows-latest, ubuntu-latest]
-      version: [12, 14]
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        version: [12, 14]
     runs-on: ${{ matrix.os }}
     steps:
       - name: check matrix
