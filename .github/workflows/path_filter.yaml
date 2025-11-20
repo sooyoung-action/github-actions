@@ -2,7 +2,7 @@ name: path-filter
 on:
   push: # push event
     paths: # path filter 사용 : path에 변경사항이 생길 떄, 워크플로우가 트리거
-      - ".github/workflow/part1/*" # .github/workflow/part1/ 내 파일이 변경 될 때, 동작하는 Workflow
+      - ".github/workflows/part1/*" # .github/workflow/part1/ 내 파일이 변경 될 때, 동작하는 Workflow
 
 jobs:
   path-filter:
