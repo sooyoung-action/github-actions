@@ -1,7 +1,7 @@
 name: if-2
 on: push
 
-job:
+jobs:
   jobs:
     runs-on: ubuntu-latest
     steps:
