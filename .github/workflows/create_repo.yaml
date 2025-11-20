@@ -27,4 +27,4 @@ jobs:
 
       - name: create-repo # input 값으로 Repository 생성
         run: |
-          gh repo create sooyoung-action/${{ inputs.prefix }}-${{ inputs.name }} --public -add-readme
+          gh repo create sooyoung-action/${{ inputs.prefix }}-${{ inputs.name }} --public --add-readme
