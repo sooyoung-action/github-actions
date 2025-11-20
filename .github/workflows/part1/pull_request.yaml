@@ -1,4 +1,4 @@
-name: pull-request-workflow
+name: pull-request-workflow 1
 on:
   pull_request:
     types: [opened] # pull_request의 Activity Type 명시적 지정
