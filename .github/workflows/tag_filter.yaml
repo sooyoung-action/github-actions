@@ -1,0 +1,12 @@
+name: tag-filter
+on:
+  push:
+    tags: # 특정 태그 패턴이 맞는 경우에만 워크플로우가 실행되도록 일반적으로 버전 정보를 나타내는 태그 패턴 사용
+      - "v[0-9]+.[0-9]+.[0-9]+" # v1.0.0 or v2.2.2 / v1.0 은 제외
+
+jobs:
+  tag-filter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: echo hello
