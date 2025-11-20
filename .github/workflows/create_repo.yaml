@@ -1,0 +1,30 @@
+name: create-repo
+on:
+  workflow_dispatch:
+    inputs:
+      prefix: # 레포지토리 Prefix
+        description: "set repo prefix"
+        required: true
+        default: "service"
+        type: choice
+        options:
+          - example
+          - service
+
+      name: # 레포지토리 이름
+        description: "set repo name"
+        required: true
+        default: "github-actions"
+        type: string
+
+jobs:
+  create-repo-autimation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: gh auth login # Github 권한 받아오기
+        run: |
+          echo ${{ secrets.PERSONAL_ACCESS_TOKEN }} | gh auth login --with-token
+
+      - name: create-repo # input 값으로 Repository 생성
+        run: |
+          gh repo create sooyoung-action/${{ inputs.prefix }}-${{ inputs.name }} --public -add-readme
