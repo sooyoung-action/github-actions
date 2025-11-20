@@ -1,0 +1,9 @@
+name: context
+on: workflow_dispatch
+
+jobs:
+  context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: github context
+        run: echo '${{ toJSON(github) }}' # cotext의 Log 확인 (각 Context는 자바스크립트 객체이므로 출력을 하려면, 객체를 문자열로 반환하기 위해 toJSON()이라는 기능을 통해 Object 문자를 JSON 문자열로 변환 가능)
