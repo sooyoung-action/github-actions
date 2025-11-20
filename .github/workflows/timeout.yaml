@@ -14,6 +14,7 @@ jobs:
             count=$((count+1))
             sleep 1
           done
+        timeout-minutes: 1 # 첫 번쨰 스텝이 1분 안에 완료되지 않으면, 두 번쨰 스텝을 실행하지 않고 바로 종료
 
       - name: echo # echo hello 출력 (두 번쨰 실행은 실행되지 않음)
         run: echo hello
