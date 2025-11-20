@@ -18,7 +18,7 @@ on:
         type: string
 
 jobs:
-  create-repo-autimation:
+  create-repo-automation:
     runs-on: ubuntu-latest
     steps:
       - name: gh auth login # Github 권한 받아오기
@@ -44,7 +44,7 @@ jobs:
                     {
                       "title": "create repo result ${{ steps.create-repo.outcome }}", 
                       "short": true,
-                      "value": "${{ inputs.prefix }}-${{ inputs.name }}""
+                      "value": "${{ inputs.prefix }}-${{ inputs.name }}"
                     }
                   ]
                 }
