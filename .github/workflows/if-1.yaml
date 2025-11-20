@@ -1,7 +1,7 @@
 name: if-1
 on:
   push:
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 jobs:
   job1:
