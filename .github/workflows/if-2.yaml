@@ -2,7 +2,7 @@ name: if-2
 on: push
 
 jobs:
-  jobs:
+  job1:
     runs-on: ubuntu-latest
     steps:
       - name: exit 1
