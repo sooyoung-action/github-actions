@@ -32,7 +32,7 @@ jobs:
 
       - name: slack # 슬랙 성공, 실패 알림
         if: always()
-        uses: slackapi/slack-github-action@v2.1.1
+        uses: slackapi/slack-github-action@v1.24.0
         with:
           payload: |
             {
