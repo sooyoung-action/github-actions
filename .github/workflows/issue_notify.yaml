@@ -1,4 +1,4 @@
-name: issue_notigy
+name: issue_notify
 
 on:
   issues:
