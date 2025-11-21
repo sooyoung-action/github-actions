@@ -1,0 +1,11 @@
+name: branch-filter
+on:
+  push:
+    branches: ["dev"] # 특정 branch에서만 동작하도록 filter 설정 (branch filter에 원하는 branch를 넣으면 해당 branch에 push event가 발생했을 때만 workflow 실행)
+
+jobs:
+  branch-filter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: echo hello
