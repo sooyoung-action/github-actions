@@ -3,7 +3,7 @@ on:
   pull_request:
     types: [opened, synchronize, closed] # closed를 정의해야 Merge될 때 동작 제어 가능
     branches: [dev]
-    path:
+    paths:
     - 'my-app/**'
 
 jobs:
