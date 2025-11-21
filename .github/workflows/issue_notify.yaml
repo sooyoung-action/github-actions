@@ -7,11 +7,15 @@ on:
 jobs:
   get-keyword:
     runs-on: ubuntu-latest
+    outputs:
+      level: ${{ steps.get-keyword.outputs.level }}
+
     steps:
       - name: checkout
         uses: actions/checkout@v4
 
       - name: get keyword
+        id: get-keyword
         run: | # =~ : 유사하다면,
           echo level=Undefined >> $GITHUB_OUTPUT
 
