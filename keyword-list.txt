@@ -1,3 +1,2 @@
 critical
 normal
-high
