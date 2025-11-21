@@ -16,7 +16,7 @@ jobs:
 
       - name: get keyword
         id: get-keyword
-        run: | # =~ : 유사하다면,
+        run: |
           echo level=Undefined >> $GITHUB_OUTPUT
 
           keywords=$(cat keyword-list.txt)
