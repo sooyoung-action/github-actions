@@ -1,4 +1,4 @@
-name: issue_notify
+name: issue-notify
 
 on:
   issues:
@@ -19,7 +19,7 @@ jobs:
         run: | # =~ : 유사하다면,
           echo level=Undefined >> $GITHUB_OUTPUT
 
-          keywords=${cat keyword-list.txt}
+          keywords=$(cat keyword-list.txt)
           for keyword in $keywords; do
             if [[ "${{ github.event.issue.title }}" =~ "$keyword" ]]; then
               echo level=$keyword >> $GITHUB_OUTPUT
