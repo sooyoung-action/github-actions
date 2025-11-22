@@ -158,7 +158,7 @@ jobs:
         run: |
           echo ${{ secrets.PERSONAL_ACCESS_TOKEN }} | gh auth login --with-token
       - name: create branch
-        run: | # ref_name : Github Context, Branch 이름 혹은 Tag 이름 값
+        run: | # ref_name : Github Context, Branch 이름 또는 Tag 이름 값
           git checkout -b release/${{ github.ref_name }}
           git push origin release/${{ github.ref_name }}
       - name: create pr
