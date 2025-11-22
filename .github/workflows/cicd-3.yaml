@@ -148,7 +148,7 @@ jobs:
     #   SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
 
   create-pr:
-    if: needs.set-environment.outputs.environment == 'qa' # QA 환경 배포에 성공한 코드를 운영 환경에 반영할 수 있도록 PR을 만드는 작업
+    if: needs.set-environment.outputs.environment == 'qa' # QA 환경 배포에 성공한 코드를 운영 환경에 반영할 수 있도록 PR 생성
     runs-on: ubuntu-latest
     needs: [set-environment, deploy]
     steps:
