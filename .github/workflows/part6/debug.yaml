@@ -1,0 +1,16 @@
+name: debug
+on: push
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: force fail # 의도적으로 실패하는 상황을 만듬
+        run: | # 존재하지 않는 파일 읽기
+          cat test.txt
+      - name: uses tmate
+        if: always() # 강제 실행
+        uses: mxschmitt/action-tmate@v3
+        timeout-minutes: 10
